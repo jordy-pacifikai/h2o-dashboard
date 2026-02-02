@@ -8,7 +8,7 @@ interface GuideStep {
   element?: string
   intro: string
   title?: string
-  position?: 'top' | 'bottom' | 'left' | 'right' | 'auto'
+  position?: 'top' | 'bottom' | 'left' | 'right'
 }
 
 const guideSteps: GuideStep[] = [
@@ -148,7 +148,7 @@ export default function InteractiveGuide() {
         element: step.element,
         intro: step.intro,
         title: step.title,
-        position: step.position || 'auto',
+        position: step.position as 'top' | 'bottom' | 'left' | 'right' | undefined,
       })),
       showProgress: true,
       showBullets: true,
