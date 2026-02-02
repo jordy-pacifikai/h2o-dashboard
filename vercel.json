@@ -6,10 +6,6 @@
   "installCommand": "npm install",
   "devCommand": "npm run dev",
   "regions": ["cdg1"],
-  "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "@h2o_supabase_url",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@h2o_supabase_anon_key"
-  },
   "headers": [
     {
       "source": "/(.*)",
