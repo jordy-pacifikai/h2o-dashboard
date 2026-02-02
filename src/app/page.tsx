@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import introJs from 'intro.js'
+import { guideSteps } from '@/components/InteractiveGuide'
 import {
   MessageCircle,
   Users,
@@ -84,6 +86,26 @@ export default function Dashboard() {
   const [isLoading, setIsLoading] = useState(true)
   const [lastUpdate, setLastUpdate] = useState<Date>(new Date())
   const [activeTab, setActiveTab] = useState('tracker')
+
+  const startGuide = () => {
+    const intro = introJs()
+    intro.setOptions({
+      steps: guideSteps.map((step) => ({
+        element: step.element,
+        intro: step.intro,
+        title: step.title,
+        position: step.position,
+      })),
+      showProgress: true,
+      showBullets: true,
+      exitOnOverlayClick: false,
+      doneLabel: 'Terminer',
+      nextLabel: 'Suivant',
+      prevLabel: 'Precedent',
+      skipLabel: 'Passer',
+    })
+    intro.start()
+  }
 
   const fetchStats = async () => {
     setIsLoading(true)
@@ -268,7 +290,10 @@ export default function Dashboard() {
             Gagnez du temps avec notre IA qui qualifie et relance automatiquement vos prospects.
           </p>
           <div className="flex items-center gap-3">
-            <button className="flex items-center gap-2 px-4 py-2 bg-accent rounded-xl text-text-primary font-medium text-sm hover:bg-accent-hover transition-all">
+            <button
+              onClick={startGuide}
+              className="flex items-center gap-2 px-4 py-2 bg-accent rounded-xl text-text-primary font-medium text-sm hover:bg-accent-hover transition-all"
+            >
               <Play size={16} />
               Demarrer
             </button>
