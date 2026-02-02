@@ -141,12 +141,26 @@ body {
 .stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
 
 /* Intro.js customization - Light Theme */
+.introjs-overlay {
+  z-index: 99999 !important;
+}
+
+.introjs-helperLayer {
+  z-index: 99999 !important;
+}
+
+.introjs-tooltipReferenceLayer {
+  z-index: 100000 !important;
+}
+
 .introjs-tooltip {
+  z-index: 100001 !important;
   background: white !important;
   border: 1px solid var(--border) !important;
   border-radius: 16px !important;
   color: var(--text-primary) !important;
-  box-shadow: var(--shadow-lg) !important;
+  box-shadow: var(--shadow-xl) !important;
+  max-width: 400px !important;
 }
 
 .introjs-tooltiptext {
@@ -171,9 +185,10 @@ body {
 }
 
 .introjs-helperLayer {
-  background: rgba(198, 244, 50, 0.1) !important;
+  background: rgba(198, 244, 50, 0.15) !important;
   border: 2px solid var(--accent) !important;
   border-radius: 16px !important;
+  box-shadow: 0 0 0 5000px rgba(0, 0, 0, 0.5) !important;
 }
 
 .introjs-arrow.top {
