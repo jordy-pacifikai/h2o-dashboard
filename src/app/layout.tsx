@@ -22,9 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-background`}>
         <Sidebar />
-        <main className="ml-64 min-h-screen p-8">
+        <main className="ml-[280px] min-h-screen p-8">
           {children}
         </main>
         <Chatbot />
