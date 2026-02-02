@@ -132,14 +132,6 @@ const guideSteps: GuideStep[] = [
 export default function InteractiveGuide() {
   const [hasSeenGuide, setHasSeenGuide] = useState(true)
 
-  useEffect(() => {
-    const seen = localStorage.getItem('h2o_guide_seen')
-    if (!seen) {
-      setHasSeenGuide(false)
-      startGuide()
-    }
-  }, [])
-
   const startGuide = () => {
     const intro = introJs()
 
@@ -171,6 +163,32 @@ export default function InteractiveGuide() {
 
     intro.start()
   }
+
+  useEffect(() => {
+    // Auto-start on first visit
+    const seen = localStorage.getItem('h2o_guide_seen')
+    if (!seen) {
+      setHasSeenGuide(false)
+      // Small delay to ensure DOM is ready
+      setTimeout(() => startGuide(), 500)
+    }
+
+    // Listen for guide button clicks
+    const handleGuideClick = () => {
+      startGuide()
+    }
+
+    const guideButton = document.querySelector('[data-intro="guide-button"]')
+    if (guideButton) {
+      guideButton.addEventListener('click', handleGuideClick)
+    }
+
+    return () => {
+      if (guideButton) {
+        guideButton.removeEventListener('click', handleGuideClick)
+      }
+    }
+  }, [])
 
   return null
 }

@@ -58,7 +58,7 @@ export const config = {
     },
     {
       id: "amenagements",
-      name: "Aménagements Urbains",
+      name: "Aménagements",
       icon: "building",
       color: "#00B4D8",
       services: [
@@ -70,7 +70,7 @@ export const config = {
     },
     {
       id: "infrastructure",
-      name: "Infrastructure & Mobilité",
+      name: "Infrastructure",
       icon: "road",
       color: "#90E0EF",
       services: [

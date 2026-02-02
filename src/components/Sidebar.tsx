@@ -131,26 +131,14 @@ export default function Sidebar() {
                     className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-text-secondary hover:bg-surface-hover hover:text-text-primary transition-all"
                   >
                     <div
-                      className="w-8 h-8 rounded-lg flex items-center justify-center"
+                      className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
                       style={{ backgroundColor: `${dept.color}15` }}
                     >
                       <Icon size={16} style={{ color: dept.color }} />
                     </div>
-                    <span className="text-sm flex-1">{dept.name}</span>
-                    <div className="flex items-center gap-1">
-                      <div
-                        className="w-8 h-1.5 rounded-full overflow-hidden"
-                        style={{ backgroundColor: `${dept.color}20` }}
-                      >
-                        <div
-                          className="h-full rounded-full"
-                          style={{
-                            width: `${dept.automationScore}%`,
-                            backgroundColor: dept.color,
-                          }}
-                        />
-                      </div>
-                      <span className="text-xs text-text-muted">{dept.automationScore}%</span>
+                    <span className="text-sm flex-1 truncate" title={dept.name}>{dept.name}</span>
+                    <div className="flex items-center gap-1 flex-shrink-0">
+                      <span className="text-xs font-medium" style={{ color: dept.color }}>{dept.automationScore}%</span>
                     </div>
                   </Link>
                 )
