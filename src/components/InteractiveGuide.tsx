@@ -111,17 +111,17 @@ const guideSteps: GuideStep[] = [
   },
   {
     intro: `
-      <div class="text-center">
+      <div class="text-center" style="max-width: 280px;">
         <h3 class="text-xl font-bold mb-2">Vous etes pret!</h3>
-        <p class="text-text-muted">Explorez votre dashboard et decouvrez comment l'IA peut transformer H2O Ingenierie.</p>
-        <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
-          <div class="p-2 bg-surface rounded-lg">
-            <p class="text-h2o-primary font-semibold">5</p>
-            <p class="text-text-muted">Workflows actifs</p>
+        <p class="text-text-muted text-sm">Explorez votre dashboard et decouvrez comment l'IA peut transformer H2O Ingenierie.</p>
+        <div class="mt-4 grid grid-cols-2 gap-2 text-sm">
+          <div class="p-2 bg-gray-100 rounded-lg">
+            <p class="text-blue-600 font-semibold">5</p>
+            <p class="text-gray-500 text-xs">Workflows</p>
           </div>
-          <div class="p-2 bg-surface rounded-lg">
-            <p class="text-green-400 font-semibold">200h</p>
-            <p class="text-text-muted">Economisees/mois</p>
+          <div class="p-2 bg-gray-100 rounded-lg">
+            <p class="text-green-600 font-semibold">200h</p>
+            <p class="text-gray-500 text-xs">Economisees</p>
           </div>
         </div>
       </div>

@@ -181,7 +181,12 @@ body {
 }
 
 .introjs-skipbutton {
-  color: var(--text-muted) !important;
+  color: var(--error) !important;
+  font-weight: 500 !important;
+}
+
+.introjs-skipbutton:hover {
+  color: #DC2626 !important;
 }
 
 .introjs-helperLayer {
